@@ -26,8 +26,10 @@ for(t in 2:timesteps){
 
 
 mod2<-data.frame(time=c(mod$time,mod$time,mod$time),N=c(mod$noneNorm, mod$drugMut, mod$drugNorm),sim=rep(c("Normal, no drug","mutant popl with drug","normal popl with drug"),each=timesteps))
-
+mod2
 library(ggplot2)
 ggplot(data=mod2,aes(x=time,y=N,color=sim)) + 
   geom_line() +
+  xlab("time (days)") +
+  ylab("Population")
   theme_classic()
